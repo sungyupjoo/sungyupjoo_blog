@@ -1,3 +1,8 @@
 .container {
-  background-color: #000;
+  /* 화면 배치를 위함(menu와 5:2) */
+  flex: 5;
+}
+
+.title {
+  margin: 50px 0px;
 }
