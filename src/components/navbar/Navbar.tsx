@@ -3,20 +3,17 @@
 import styles from "./navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import instagramIcon from "@/assets/images/instagram.png";
-import youtubeIcon from "@/assets/images/youtube.png";
+import { instagram, github, youtube, naver, resume } from "@/assets/images";
 import AuthLinks from "../authLinks/authLinks";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import { useState } from "react";
+import Socials from "../socials/Socials";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className={styles.container}>
-      <div className={styles.social}>
-        <Image src={instagramIcon} alt="instagram" width={24} height={24} />
-        <Image src={youtubeIcon} alt="youtube" width={24} height={24} />
-      </div>
+      <Socials />
       <div className={styles.logo}>sungyup's</div>
       <div className={styles.links}>
         <ThemeToggle />
