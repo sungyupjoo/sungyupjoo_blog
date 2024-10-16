@@ -1,3 +1,4 @@
 .container {
-  background-color: #000;
+  /* 화면 배치를 위함(cardList와 5:2) */
+  flex: 2;
 }
