@@ -3,7 +3,7 @@
 }
 
 .title {
-  font-size: 72px;
+  font-size: 90px;
 }
 
 .bold {
@@ -51,4 +51,31 @@
   background-color: #017849;
   color: white;
   width: max-content;
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    font-size: 72px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 64px;
+  }
+  .imgContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 36px;
+  }
 }
