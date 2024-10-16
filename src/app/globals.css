@@ -3,6 +3,11 @@
   --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
+  --codingColor: #ffb14f;
+  --musicColor: #789cff;
+  --artColor: #775aec;
+  --foodColor: #ff7887;
+  --travelColor: #7fb881;
 }
 
 * {

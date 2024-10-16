@@ -1,0 +1,34 @@
+.categoryList {
+  margin-top: 35px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.categoryItem {
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  color: white;
+}
+
+.music {
+  background-color: var(--musicColor);
+}
+
+.travel {
+  background-color: var(--travelColor);
+}
+
+.food {
+  background-color: var(--foodColor);
+}
+
+.coding {
+  background-color: var(--codingColor);
+}
+
+.art {
+  background-color: var(--artColor);
+}
