@@ -3,77 +3,37 @@ import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { art, coding, food, music, travel } from "@/assets/images";
+import { categoryList } from "@/types/types";
+
+const categoryImage = {
+  coding: coding,
+  music: music,
+  art: art,
+  food: food,
+  travel: travel,
+};
 
 const CategoryList = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Popular Categories</h1>
+      <h1 className={styles.title}>Categories</h1>
       <div className={styles.categories}>
-        <Link
-          href="/blog?cat=coding"
-          className={`${styles.category} ${styles.coding}`}
-        >
-          <Image
-            className={styles.image}
-            src={coding}
-            alt=""
-            width={50}
-            height={50}
-          />
-          coding
-        </Link>
-        <Link
-          href="/blog?cat=music"
-          className={`${styles.category} ${styles.music}`}
-        >
-          <Image
-            className={styles.image}
-            src={music}
-            alt=""
-            width={50}
-            height={50}
-          />
-          music
-        </Link>
-        <Link
-          href="/blog?cat=art"
-          className={`${styles.category} ${styles.art}`}
-        >
-          <Image
-            className={styles.image}
-            src={art}
-            alt=""
-            width={50}
-            height={50}
-          />
-          art
-        </Link>
-        <Link
-          href="/blog?cat=food"
-          className={`${styles.category} ${styles.food}`}
-        >
-          <Image
-            className={styles.image}
-            src={food}
-            alt=""
-            width={50}
-            height={50}
-          />
-          food
-        </Link>
-        <Link
-          href="/blog?cat=travel"
-          className={`${styles.category} ${styles.travel}`}
-        >
-          <Image
-            className={styles.image}
-            src={travel}
-            alt=""
-            width={50}
-            height={50}
-          />
-          travel
-        </Link>
+        {categoryList.map((category) => (
+          <Link
+            href={`/blog?cat=${category}`}
+            className={`${styles.category} ${styles[category]}`}
+            key={category}
+          >
+            <Image
+              className={styles.image}
+              src={categoryImage[category]}
+              alt=""
+              width={50}
+              height={50}
+            />
+            {category}
+          </Link>
+        ))}
       </div>
     </div>
   );

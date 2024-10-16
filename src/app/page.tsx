@@ -1,15 +1,18 @@
 import CardList from "@/components/cardList/CardList";
 import CategoryList from "@/components/categoryList/categoryList";
 import Featured from "@/components/featured/Featured";
-import Pagination from "@/components/pagination/Pagination";
+import Menu from "@/components/menu/Menu";
+import styles from "./homepage.module.css";
 
 export default function Home() {
   return (
     <div>
       <Featured />
       <CategoryList />
-      <CardList />
-      <Pagination />
+      <div className={styles.content}>
+        <CardList />
+        <Menu />
+      </div>
     </div>
   );
 }

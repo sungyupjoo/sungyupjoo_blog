@@ -23,26 +23,27 @@
   height: 80px;
   justify-content: center;
   border-radius: 10px;
+  color: white;
 }
 
 .category.coding {
-  background-color: #57c4ff31;
+  background-color: var(--codingColor);
 }
 
 .category.travel {
-  background-color: #7fb80031;
+  background-color: var(--travelColor);
 }
 
 .category.food {
-  background-color: #ff795736;
+  background-color: var(--foodColor);
 }
 
 .category.music {
-  background-color: #ffa19a2e;
+  background-color: var(--musicColor);
 }
 
 .category.art {
-  background-color: #ffc65a26;
+  background-color: var(--artColor);
 }
 
 .image {
