@@ -6,6 +6,7 @@ import github from "./github.png";
 import moon from "./moon.png";
 import music from "./music.jpg";
 import naver from "./naver.png";
+import logo from "./logo.png";
 import p1 from "./p1.jpeg";
 import sun from "./sun.png";
 import resume from "./resume.png";
@@ -21,6 +22,7 @@ export {
   moon,
   music,
   naver,
+  logo,
   p1,
   resume,
   sun,
