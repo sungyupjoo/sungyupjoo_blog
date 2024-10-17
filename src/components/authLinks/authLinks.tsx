@@ -3,14 +3,15 @@
 import Link from "next/link";
 import styles from "./authLinks.module.css";
 import { useState } from "react";
+import { authenticationStatus } from "@/types/types";
 
 const AuthLinks = () => {
-  const status = "notauthenticated";
+  const status: authenticationStatus = "notAuthenticated";
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      {status === "notauthenticated" ? (
+      {status === "notAuthenticated" ? (
         <Link href="/login" className={styles.link}>
           Login
         </Link>
