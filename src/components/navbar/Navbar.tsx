@@ -1,9 +1,7 @@
 "use client";
 
 import styles from "./navbar.module.css";
-import Image from "next/image";
 import Link from "next/link";
-import { instagram, github, youtube, naver, resume } from "@/assets/images";
 import AuthLinks from "../authLinks/authLinks";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import { useState } from "react";
@@ -14,7 +12,9 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <Socials />
-      <div className={styles.logo}>sungyup's</div>
+      <div className={styles.logo}>
+        <a href="/">sungyup's</a>
+      </div>
       <div className={styles.links}>
         <ThemeToggle />
         <Link href="/" className={styles.link}>

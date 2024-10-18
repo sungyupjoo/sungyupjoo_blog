@@ -6,8 +6,22 @@ import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import { external, image, plus, video } from "@/assets/images";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const WritePage = () => {
+  const { status } = useSession();
+
+  const router = useRouter();
+
+  if (status === "loading") {
+    return <div className={styles.loading}>로딩 중...</div>;
+  }
+
+  if (status === "unauthenticated") {
+    router.push("/login");
+  }
+
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
