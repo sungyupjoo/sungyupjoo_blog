@@ -17,4 +17,4 @@ export const categoryList: category[] = [
   "travel",
 ];
 
-export type authenticationStatus = "authenticated" | "notAuthenticated";
+export type authenticationStatus = "authenticated" | "unauthenticated";
