@@ -70,7 +70,6 @@ model Category {
   id String @id @default(cuid()) @map("_id")
   slug String @unique
   title String
-  description String
   img String?
   Posts Post[]
 }
