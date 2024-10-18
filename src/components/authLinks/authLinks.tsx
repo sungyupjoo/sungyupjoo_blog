@@ -6,7 +6,7 @@ import { useState } from "react";
 import { authenticationStatus } from "@/types/types";
 
 const AuthLinks = () => {
-  const status: authenticationStatus = "notAuthenticated";
+  const status: authenticationStatus = "authenticated";
   const [open, setOpen] = useState(false);
 
   return (
