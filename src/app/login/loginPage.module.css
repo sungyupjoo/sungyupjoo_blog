@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.wrapper {
+  background-color: var(--softBg);
+  display: flex;
+  padding: 150px 200px;
+  flex-direction: column;
+  gap: 100px;
+  border-radius: 10px;
+}
+
+.socialButton {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.socialButton:first-child {
+  background-color: white;
+  color: black;
+}
+
+.socialButton:last-child {
+  background-color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 50px 100px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .wrapper {
+    padding: 30px;
+  }
+  .socialButton {
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
