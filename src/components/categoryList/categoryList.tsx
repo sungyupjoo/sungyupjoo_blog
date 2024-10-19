@@ -2,8 +2,20 @@ import React from "react";
 import styles from "./categoryList.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { art, coding, food, music, travel } from "@/assets/images";
-import { categoryList } from "@/types/types";
+import { CategoryType } from "@/types/types";
+import { coding, food, music, travel } from "@/assets/images";
+import { art } from "@/assets/images";
+
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/categories", {
+    cache: "no-store",
+  });
+  if (!res.ok) {
+    throw new Error("Failed to fetch categories");
+  }
+  const data = await res.json();
+  return data;
+};
 
 const categoryImage = {
   coding: coding,
@@ -13,25 +25,26 @@ const categoryImage = {
   travel: travel,
 };
 
-const CategoryList = () => {
+const CategoryList = async () => {
+  const data: CategoryType[] = await getData();
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Categories</h1>
       <div className={styles.categories}>
-        {categoryList.map((category) => (
+        {data?.map((category: CategoryType) => (
           <Link
-            href={`/blog?cat=${category}`}
-            className={`${styles.category} ${styles[category]}`}
-            key={category}
+            key={category._id}
+            href={`/blog?cat=${category.slug}`}
+            className={`${styles.category} ${styles[category.slug]}`}
           >
             <Image
               className={styles.image}
-              src={categoryImage[category]}
+              src={categoryImage[category.slug as keyof typeof categoryImage]}
               alt=""
               width={50}
               height={50}
             />
-            {category}
+            {category.slug}
           </Link>
         ))}
       </div>

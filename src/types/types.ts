@@ -18,3 +18,41 @@ export const categoryList: category[] = [
 ];
 
 export type authenticationStatus = "authenticated" | "unauthenticated";
+
+export type CategoryType = {
+  _id: string;
+  slug: string;
+  title: string;
+  img: string;
+  Posts: PostType[];
+};
+
+export type PostType = {
+  _id: string;
+  createdAt: string;
+  title: string;
+  slug: string;
+  desc: string;
+  img?: string;
+  views: number;
+  catSlug: string;
+  cat: string;
+  userEmail: string;
+  user: User;
+  comments: Comment[];
+};
+
+export type User = {
+  _id: string;
+  name: string;
+  email: string;
+  img?: string;
+};
+
+export type Comment = {
+  _id: string;
+  desc: string;
+  createdAt: string;
+  userEmail: string;
+  user: User;
+};
