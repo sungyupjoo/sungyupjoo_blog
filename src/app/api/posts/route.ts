@@ -21,9 +21,12 @@ export const GET = async (req: Request) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
-    return new NextResponse(JSON.stringify(posts, count), { status: 200 });
+    return new NextResponse(JSON.stringify({ posts, count }), { status: 200 });
   } catch (err) {
     console.log(err);
-    return new NextResponse(JSON.stringify(err), { status: 500 });
+    return new NextResponse(
+      JSON.stringify({ error: "Internal server error" }),
+      { status: 500 }
+    );
   }
 };
