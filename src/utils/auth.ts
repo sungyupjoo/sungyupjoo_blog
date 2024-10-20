@@ -8,3 +8,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(prisma),
   providers: [Google, GitHub],
 });
+
+export const getAuthSession = async () => {
+  const session = await auth();
+  return session;
+};
