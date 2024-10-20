@@ -5,7 +5,7 @@ import { PostType } from "@/types/types";
 
 const getData = async (page: number, cat?: string) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `${process.env.NEXT_PUBLIC_API}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
@@ -17,11 +17,9 @@ const getData = async (page: number, cat?: string) => {
   return data;
 };
 
-const CardList = async ({ page, cat }: { page: number; cat: string }) => {
-  const { posts, count } = await getData(page);
-
+const CardList = async ({ page, cat }: { page: number; cat?: string }) => {
+  const { posts, count } = await getData(page, cat);
   const POST_PER_PAGE = 2;
-
   const hasPrev = POST_PER_PAGE * (page - 1) > 0;
   const hasNext = POST_PER_PAGE * (page - 1) + POST_PER_PAGE < count;
 

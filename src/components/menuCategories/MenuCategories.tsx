@@ -9,8 +9,7 @@ const MenuCategories = () => {
         <Link
           href={`/blog?cat=${category}`}
           className={`${styles.categoryItem} ${styles[category]}`}
-          // TODO: 유니크 키 프랍으로 변경 필요
-          key={category}
+          key={categoryList.indexOf(category)}
         >
           {category}
         </Link>
